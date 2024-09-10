@@ -1,6 +1,6 @@
-async function getWeather() {
+async function getWeather(zip) {
   const url =
-    'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?key=R9YNYGYLHKQAZ4B8BR72HZ678';
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}?key=R9YNYGYLHKQAZ4B8BR72HZ678`;
   const result = await fetch(url, {
     mode: 'cors',
   });
@@ -8,4 +8,4 @@ async function getWeather() {
   console.log(data);
 }
 
-getWeather();
+getWeather('79928');
