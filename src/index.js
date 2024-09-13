@@ -1,3 +1,5 @@
+import './style.css';
+
 async function getWeather(zip) {
   try {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zip}?key=R9YNYGYLHKQAZ4B8BR72HZ678`;
