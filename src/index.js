@@ -23,4 +23,5 @@ getWeather('79928')
     throw new Error(e);
 });
 
+console.log("Hello");
 
