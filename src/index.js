@@ -13,15 +13,25 @@ async function getWeather(zip) {
   }
 }
 
+// getWeather('79928')
+//   .then( (data) => {
+//     console.log(data.description);
+//   })
+//   .catch( (e) =>{
+//     throw new Error(e);
+// });
 
-
-getWeather('79928')
-  .then( (data) => {
-    console.log(data.description);    
-  })
-  .catch( (e) =>{
-    throw new Error(e);
+const form = document.querySelector('form');
+const input = document.querySelector('input');
+form.addEventListener('submit', (event) => {  
+  event.preventDefault();
+  if(!input.validity.valid){
+    input.setCustomValidity('Use U.S postal code plz');
+    input.reportValidity();
+    
+  }
+  else{
+    input.setCustomValidity('');        
+  }
+  
 });
-
-console.log("Hello");
-

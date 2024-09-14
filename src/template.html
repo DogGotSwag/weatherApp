@@ -6,10 +6,10 @@
     <title>weather app</title>
 </head>
 <body>
-    <form >
+    <form novalidate>
         <p>
         <label for="zip">ZIP:</label>
-        <input type="text" id="zip" required pattern="^\d{5}(?:[-\s]\d{4})?$">
+        <input type="text" id="zip" required pattern="^[0-9]{5}(?:-[ 0-9]{4})?$">
         <button type="submit">Enter</button>
         </p>
     </form>
