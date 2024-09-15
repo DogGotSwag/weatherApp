@@ -1,20 +1,8 @@
 import './style.css';
 import getWeather from './getWeather';
+import getGif from './getGif'
 
-function intialGif() {
-  const img = document.querySelector('img');
-  fetch(
-    'https://api.giphy.com/v1/gifs/translate?api_key=84bbjIY88igM5FQdGqNXKmW0A5ajiRxH&s=start',
-    { mode: 'cors' }
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      img.src = response.data.images.original.url;
-    });
-
-}
-
-intialGif();
+getGif('start');
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
