@@ -5,6 +5,11 @@ body,html{
    
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -44,3 +49,28 @@ button{
     cursor: pointer;
 }
 
+.main{
+    border: 2px solid whitesmoke;
+    width: 80%;
+    height: 100px;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 3px;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.main > img{
+    width: 25%;
+    height: auto;
+    align-self: center;
+}
+
+.main > .data{
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    display: none;
+}
