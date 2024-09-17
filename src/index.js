@@ -1,6 +1,7 @@
 import './style.css';
 import getWeather from './getWeather';
 import getGif from './getGif'
+import displayData from './displayData'
 
 // getGif('start');
 
@@ -14,7 +15,6 @@ form.addEventListener('submit', async(event) => {
   } else {
     input.setCustomValidity('');
     const data = await getWeather('79928')
-    console.log(data);
-    
+    displayData(data);
   }
 });

@@ -4,9 +4,7 @@ export default async function getWeather(zip) {
     const result = await fetch(url, {
       mode: 'cors',
     });
-    const data = await result.json();
-    console.log(data);
-    
+    const data = await result.json();    
     return {
       description: data.description,
       timeZone: data.timezone,
