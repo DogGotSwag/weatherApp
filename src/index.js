@@ -2,23 +2,19 @@ import './style.css';
 import getWeather from './getWeather';
 import getGif from './getGif'
 
-getGif('start');
+// getGif('start');
 
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async(event) => {
   event.preventDefault();
   if (!input.validity.valid) {
     input.setCustomValidity('Use U.S postal code plz');
     input.reportValidity();
   } else {
     input.setCustomValidity('');
-    getWeather('79928')
-      .then((data) => {
-        console.log(data.description);
-      })
-      .catch((e) => {
-        throw new Error(e);
-      });
+    const data = await getWeather('79928')
+    console.log(data);
+    
   }
 });
