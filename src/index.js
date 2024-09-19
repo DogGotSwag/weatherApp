@@ -19,8 +19,10 @@ form.addEventListener('submit', async(event) => {
     getGif('loading');
     input.setCustomValidity('');
     const data = await getWeather('79928')
-    displayData(data);
-    getGif(data.icon);
-    
+    const gif = getGif(data.icon.split('-').join(' '));
+
+    await Promise.all( [data, gif ]).then( ()=>{
+      displayData(data);
+    });
   }
 });
